@@ -1,5 +1,6 @@
 # directories
 target/
+temp/
 
 # files
 .env
