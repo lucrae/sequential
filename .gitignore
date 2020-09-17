@@ -2,6 +2,9 @@
 temp/
 target/
 
+# Python cache
+**__pycache__
+
 # files
 .env
 notes.md
