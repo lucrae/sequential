@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        {# ICONS #}
+
+        {# meta #}
+        <meta charset="UTF-8">
+        <title>Sequential</title>
+
+        {# icons #}
         <script src="https://kit.fontawesome.com/49e791e245.js" crossorigin="anonymous"></script>
 
         {# CSS #}

@@ -89,41 +89,27 @@ fn game(s: i32) -> Template {
         };
     }
 
-    // set up next round (in case of success)
-    let next_round_url = uri!(next_round: session_hash, hand.id, hand_new_event.id);
-    let restart_game_url = uri!(restart_game: session_hash);
-    
     // set context vars and render template
     let context = json!({
+        "session_hash": session_hash,
         "hand_id": hand.id,
         "new_event": hand_new_event,
         "new_event_position": new_event_position,
         "panels": panels,
         "score": hand_events.len(),
-        "next_round_url": next_round_url.to_string(),
-        "restart_game_url": restart_game_url.to_string(),
     });
 
     // render web page
     Template::render("game", &context)
 }
 
-#[get("/next?<s>&<hand_id>&<last_event_id>")]
-fn next_round(s: i32, hand_id: i32, last_event_id: i32) -> Redirect {
 
-    // establish database connection and add last event to hand
+#[post("/update_hand?<hand_id>&<event_id>")]
+fn update_hand(hand_id: i32, event_id: i32) {
+
+    // add event to hand
     let connection = db::establish_connection();
-    hand::add_card(&connection, hand_id, last_event_id);
-
-    // redirect back to main game route
-    Redirect::to(uri!(game: s))
-}
-
-#[get("/restart?<s>")]
-fn restart_game(s: i32) -> Redirect {
-
-    // redirect back to main game route
-    Redirect::to(uri!(game: 0))
+    hand::add_card(&connection, hand_id, event_id);
 }
 
 #[post("/delete_hand?<hand_id>")]
@@ -138,8 +124,8 @@ fn main() {
 
     // run rocket application
     rocket::ignite()
-        .mount("/", routes![index, game, next_round, restart_game,]) // GET methods
-        .mount("/", routes![delete_hand]) // POST methods
+        .mount("/", routes![index, game]) // GET methods
+        .mount("/", routes![update_hand, delete_hand]) // POST methods
         .mount("/static", StaticFiles::from("static")) // static resources
         .attach(Template::fairing()) 
         .launch();

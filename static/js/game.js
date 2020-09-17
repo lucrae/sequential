@@ -3,11 +3,16 @@
 function selectCorrect(position) {
 
     // get event details
+    var sessionHash = $("#session-hash").text();
+    var handID = $("#hand-id").text();
+    var newEventID = $("#new-event-id").text();
     var year = $("#new-event-year").text();
     var circa = $("#new-event-circa").text();
     var description = $("#new-event-description").text();
-    var nextRoundURL = $("#next-round-url").text();
     var score = $("#score").text();
+
+    // update hand to have new event
+    $.post(`update_hand?hand_id=${handID}&event_id=${newEventID}`);
 
     // format year display with "lead in" (e.g.: in..., around...)
     var yearDisplayLeadIn = "";
@@ -72,7 +77,7 @@ function selectCorrect(position) {
 
     // put in bottom text message
     $("#prompt-bottom-text").html(
-        `<a class="link-button" href="${nextRoundURL}">
+        `<a class="link-button" href="/game?s=${sessionHash}">
         Next <i class="fa fa-arrow-right"></i> </a>`
     )
 
@@ -88,16 +93,15 @@ function selectCorrect(position) {
 function selectIncorrect(position) {
 
     // get event details
-    var hand_id = $("#hand-id").text();
+    var handID = $("#hand-id").text();
     var year = $("#new-event-year").text();
     var circa = $("#new-event-circa").text();
     var description = $("#new-event-description").text();
     var newEventPosition = $("#new-event-position").text();
-    var restartGameURL = $("#restart-game-url").text();
     var score = $("#score").text();
 
     // delete hand
-    $.post(`delete_hand?hand_id=${hand_id}`);
+    $.post(`delete_hand?hand_id=${handID}`);
 
     // pluralise/singularise "event/s"
     if (score > 1) {
@@ -185,7 +189,7 @@ function selectIncorrect(position) {
         </p>
         ${generateAchievementPanel(score)}
         <p style="margin-top: 34px">
-            <a class="link-button" href="${restartGameURL}">
+            <a class="link-button" href="/game?s=0">
             <i class="fa fa-play"></i> Play Again</a>
         </p>
     </div>
@@ -204,57 +208,46 @@ function selectIncorrect(position) {
 
 function generateAchievementPanel(score) {
 
+    // define achievments
     let achievements = {
         5: {
             "title": "The Wheel (5+ events)",
             "description": "The wheel is considered one of the most primitive and fundamental of human inventions, establishing the early development of humans carving advanced stone tools.",
             "image": "static/images/achievements/wheel.jpg",
-            "next": "Next achievement at 10 events in a row."
+            "next": "Impressive! Next achievement at 10 events in a row."
         },
         10: {
             "title": "Paper (10+ events)",
             "description": "Produced in its earliest form by Ancient Egyptians processing papyrus, the invention of paper was crucial in the development of easily writing and sharing written language.",
             "image": "static/images/achievements/paper.jpg",
-            "next": "Next achievement at 15 events in a row."
+            "next": "You must've really been paying attention in class!<br>Next achievement at 15 events in a row."
         },
         15: {
             "title": "The Aqueduct (15+ events)",
             "description": "The invention of the aqueduct allowed the long-distance distribution of water, allowing large crop regions and cities to be artificially supplied with fresh water.",
             "image": "static/images/achievements/aqueduct.jpg",
-            "next": "Next achievement at 20 events in a row."
+            "next": "Are you a historian? Next achievement at 20 events in a row."
+        },
+        20: {
+            "title": "The Printing Press (20+ events)",
+            "description": "The printing press allowed information to be shared quickly and in huge numbers, drastically changing the nature of literature and knowledge, and paving the way for humanity's journey to the Information Age.",
+            "image": "static/images/achievements/printing_press.jpg",
+            "next": "You must be an expert! You might need an even harder challenge...<br>Next achievement at 30 events in a row."
         }
     }
 
-    // 20: printing press
-    // 30: electricty
-    // 40: personal computer
-    // 50: world wide web (internet)
-
+    // get achievement level
+    var milestones = Object.keys(achievements).reverse();
     var achievement = null;
-    for (var milestone in achievements) {
-        if (score < milestone) {
+    for (var i = 0; i < milestones.length; i++) {
+        var milestone = parseFloat(milestones[i])
+        if (score >= parseFloat(milestone)) {
+            achievement = achievements[milestone];
             break;
         }
-        achievement = achievements[milestone];
     }
 
-    // if (score >= 15) {
-    //     imageURL = "static/images/achievements/aqueduct.jpg";
-    //     achievementTitle = "Aqueduct (15+ events)";
-    //     achievementDescription = "The invention of the aqueduct allowed the long-distance distribution of water, allowing large crop regions and cities to be artificially supplied with fresh water.";
-    //     nextAchievement = "Next achievement at 20 events in a row."
-    // } else if (score >= 10) {
-    //     imageURL = "static/images/achievements/paper.jpg";
-    //     achievementTitle = "Paper (10+ events)";
-    //     achievementDescription = "Produced in its earliest form by Ancient Egyptians processing papyrus, the invention of paper was crucial in the development of easily writing and sharing written language.";
-    //     nextAchievement = "Next achievement at 15 events in a row."
-    // } else if (score >= 5) {
-    //     imageURL = "static/images/achievements/wheel.jpg";
-    //     achievementTitle = "The Wheel (5+ events)";
-    //     achievementDescription = "The wheel is considered one of the most primitive and fundamental of human inventions, establishing the early development of humans carving advanced stone tools.";
-    //     nextAchievement = "Next achievement at 10 events in a row."
-    // } else {
-
+    // return achievement panel
     if (achievement != null) {
         return `
         <div class="achievement-panel">

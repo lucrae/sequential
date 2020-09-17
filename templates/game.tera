@@ -71,14 +71,14 @@
     </div>
 
     <div class="special" style="display: none;">
+        <span id="session-hash">{{ session_hash }}</span>
         <span id="hand-id">{{ hand_id }}</span>
+        <span id="new-event-id">{{ new_event.id }}</span>
         <span id="new-event-year">{{ new_event.year }}</span>
         <span id="new-event-circa">{{ new_event.circa }}</span>
         <span id="new-event-description">{{ new_event.description }}</span>
         <span id="new-event-position">{{ new_event_position }}</span>
         <span id="score">{{ score }}</span> 
-        <span id="next-round-url">{{ next_round_url }}</span> 
-        <span id="restart-game-url">{{ restart_game_url }}</span> 
     </div>
 </div>
 

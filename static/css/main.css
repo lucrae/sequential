@@ -82,7 +82,7 @@ Prompt
     border-radius: 4px;
     background-color: var(--panel-light-light);
     margin-top: 60px;
-    padding: 32px;
+    padding: 24px 32px;
 }
 
 .achievement-panel {
