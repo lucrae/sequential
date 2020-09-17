@@ -1,0 +1,6 @@
+# directories
+target/
+
+# files
+.env
+notes.md

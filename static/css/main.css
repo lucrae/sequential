@@ -1,0 +1,235 @@
+:root {
+    --card-height: 50px;
+
+    --panel-light-light: #f4f4f4;
+    --panel-light: #eee;
+    --panel-medium-light: #ddd;
+    --panel-medium: #ccc;
+    --panel-dark: #666; 
+    --panel-dark-dark: #444;
+    --panel-accent: var(--panel-dark);
+
+    --correct: rgb(13, 139, 13);
+    --correct-dark: rgb(16, 88, 16);
+    --incorrect: rgb(223, 88, 26);
+
+    --achievement: rgb(247, 176, 46);
+}
+
+/* ============================================================================
+General
+============================================================================ */
+
+html, body {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--panel-dark-dark);
+    margin: 0;
+}
+
+.center-block {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.link-button {
+    border-radius: 4px;
+    background-color: var(--correct);
+    color: var(--panel-light);
+    text-decoration: none;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+.link-button:hover {
+    background-color: var(--correct-dark);
+}
+
+.link-button:active {
+    background-color: var(--panel-dark-dark);
+    color: var(--panel-light);
+}
+
+.correct {
+    color: var(--correct);
+}
+
+.score {
+    padding: 1px 16px;
+    border-radius: 4px;
+    color: var(--panel-light-light);
+    background-color: var(--correct);
+}
+
+/* ============================================================================
+Prompt
+============================================================================ */
+
+.prompt-block {
+    margin: 50px 0 100px 0;
+}
+
+.prompt-top-text {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prompt-bottom-text {
+    text-align: center;
+}
+
+.end-panel {
+    border: 2px solid var(--panel-light);
+    border-radius: 4px;
+    background-color: var(--panel-light-light);
+    margin-top: 60px;
+    padding: 32px;
+}
+
+.achievement-panel {
+    background-color: var(--panel-medium-light);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 24px 0 24px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.achievement-panel img {
+    flex: 20%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 132px;
+    margin-right: 8px;
+}
+
+.achievement-panel p {
+    flex: 80%;
+    padding: 8px;
+    margin: 0;
+}
+
+
+
+/* ============================================================================
+Events
+============================================================================ */
+
+.panel-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-panel {
+    display: flex;
+    border-radius: 4px;
+    background-color: var(--panel-light);
+    border: 2px solid var(--panel-medium);
+    margin: 4px;
+    min-height: var(--card-height);
+}
+
+.event-panel-year {
+    flex: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.event-panel-description {
+    flex: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.event-panel-year p {
+    width: 100%;
+    background-color: var(--panel-accent);
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    text-align: center;
+    margin: 8px;
+    font-size: 20px;
+}
+
+.event-panel-description p {
+    margin: 8px;
+    padding: 10px;
+}
+
+.placeholder-panel {
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--panel-light-light);
+    margin: 8px;
+    transition: margin 0.5s, height 0.5s, opacity 0.5s;
+    height: 30px;
+}
+
+.placeholder-panel:hover {
+    margin: 4px;
+    cursor: pointer;
+    height: var(--card-height);
+}
+
+.placeholder-panel i {
+    padding: 6px 0;
+    transition: 0.5s;
+    color: var(--panel-medium);
+}
+
+.placeholder-panel:hover i {
+    padding: 16px 0;
+    color: var(--panel-dark);
+}
+
+.placeholder-panel:active {
+    background-color: var(--panel-medium);
+}
+
+.placeholder-panel-gone {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.placeholder-panel-incorrect {
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--panel-light-light);
+    color: var(--incorrect);
+    margin: 8px;
+    height: 30px;
+}
+
+.placeholder-panel-incorrect i {
+    padding: 6px 0;
+}
+
+/* ============================================================================
+Misc.
+============================================================================ */
+
+.mark {
+    outline: 4px solid orange;
+}
+
+.grayed {
+    color: var(--panel-medium);
+}
+
+.centered {
+    text-align: center;
+}
+
+/* ============================================================================
+Footer
+============================================================================ */
+
+footer {
+    height: 200px;
+}

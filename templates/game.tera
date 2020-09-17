@@ -1,0 +1,85 @@
+{% extends "_base" %}
+{% block content %}
+
+<div class="center-block">
+
+    {# prompt block #}
+    <div class="prompt-block">
+        <div class="prompt-top-text">
+            <p>
+                Relative to the list of events below, when did the following event happen?
+            </p>
+        </div>
+        <div id="prompt-event-panel" class="event-panel">
+            <div class="event-panel-year">
+                <p style="background-color: var(--panel-medium)">
+                    <i class="fa fa-question"></i>
+                </p>
+            </div>
+            <div class="event-panel-description" style="font-weight: bold;">
+                <p>{{ new_event.description }}</p>
+            </div>
+        </div>
+        <div class="prompt-bottom-text">
+            <p id="prompt-bottom-text"></p>
+        </div>
+    </div>
+
+    {# panel block #}
+    <div class="panel-block">
+
+        <span class="grayed"><i class="fa fa-arrow-up"></i> Beginning of Time</span>
+
+        {% for panel in panels %}
+            {% if panel.3 == "placeholder" %}
+
+                {# placeholder #}
+                {% if panel.1 == true %}
+                    <div id="placeholder-panel-{{ panel.0 }}" class="placeholder-panel" onclick="selectCorrect({{ panel.0 }})" >
+                        <i class="fa fa-question"></i>
+                    </div>
+                {% else %}
+                    <div id="placeholder-panel-{{ panel.0 }}" class="placeholder-panel" onclick="selectIncorrect({{ panel.0 }})" >
+                        <i class="fa fa-question"></i>
+                    </div>
+                {% endif %}
+
+            {% else %}
+
+                {# event #}
+                <div class="event-panel">
+
+                    <div class="event-panel-year">
+                        <p>
+                            {% if panel.1 == true %}<small class="grayed">c.</small>{% endif %}
+                            {% if panel.0 >= 0 %}
+                                {{ panel.0 }}
+                            {% else %}
+                                {{ 0 - panel.0 }} <small class="grayed">BCE</small>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="event-panel-description">
+                        <p>{{ panel.2 }}</p>
+                    </div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+
+        <span class="grayed"><i class="fa fa-arrow-down"></i> Present Day</span>
+    </div>
+
+    <div class="special" style="display: none;">
+        <span id="hand-id">{{ hand_id }}</span>
+        <span id="new-event-year">{{ new_event.year }}</span>
+        <span id="new-event-circa">{{ new_event.circa }}</span>
+        <span id="new-event-description">{{ new_event.description }}</span>
+        <span id="new-event-position">{{ new_event_position }}</span>
+        <span id="score">{{ score }}</span> 
+        <span id="next-round-url">{{ next_round_url }}</span> 
+        <span id="restart-game-url">{{ restart_game_url }}</span> 
+    </div>
+</div>
+
+{% endblock content %}

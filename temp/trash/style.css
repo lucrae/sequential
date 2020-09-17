@@ -1,0 +1,147 @@
+:root {
+    --card-width: 140px;
+    --card-height: 240px;
+
+    --green: green;
+    --red: rgb(173, 36, 36);
+    --light-light-gray: #eee;
+    --light-gray: lightgray;
+    --gray: gray;
+}
+
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* PROMPT */
+
+.prompt {
+    margin: 80px;
+    text-align: center;
+}
+
+.prompt-body {
+    font-style: italic;
+    font-weight: bold;
+    background-color: var(--light-light-gray);
+    padding: 32px;
+}
+
+/* RESPONSE */
+
+.response {
+    margin: 80px;
+    text-align: center;
+}
+
+.good {
+    color: var(--green);
+}
+
+.bad {
+    color: var(--red);
+}
+
+/* CARDS */
+
+.hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--card-height);
+}
+
+.card {
+    height: 100%;
+    width: var(--card-width);
+    text-align: center;
+    margin: 8px;
+    padding: 12px;
+    background-color: var(--light-light-gray);
+    outline: 2px solid gray;
+}
+
+.card h1 {
+    font-size: 18pt;
+    color: black;
+}
+
+.card p {
+    font-size: 10pt;
+    color: gray;
+}
+
+.card-spot {
+    height: 100%;
+    width: 20px;
+    padding: 8px;
+    transition: 0.3s;
+    outline: 2px solid lightgray;
+    color: gray;
+}
+
+.card-spot:hover {
+    width: var(--card-width);
+    padding: 12px;
+    cursor: pointer;
+}
+
+.card-spot-label {
+    margin-top: calc(0.42 * var(--card-height));
+    text-align: center;
+}
+
+.correct-card {
+    outline: 4px solid var(--green);
+    width: calc(var(--card-width) * 1.2);
+    height: calc(var(--card-height) * 1.2);
+}
+
+.correct-card h1 {
+    color: var(--green);
+}
+
+.incorrect-card {
+    outline: 4px solid var(--red);
+    width: calc(var(--card-width) * 1.2);
+    height: calc(var(--card-height) * 1.2);
+}
+
+.incorrect-card h1 {
+    color: var(--red);
+}
+
+.card-year {
+    background-color: var(--light-gray);
+    padding: 8px 8px 4px 8px;
+    border-radius: 4px;
+}
+
+/* GENERAL */
+
+.link-button {
+    background-color: var(--light-gray);
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.link-button:hover {
+    background-color: var(--gray);
+    color: white;
+    cursor: pointer;
+}
+
+/* UTILS */
+
+small {
+    font-size: 12px;
+}
+
+.no-hover {
+    pointer-events: none;
+}
+
+.grayed {
+    color: var(--gray);
+}
