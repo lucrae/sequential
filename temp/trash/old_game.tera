@@ -1,0 +1,101 @@
+{% extends "_base" %}
+
+{% block content %}
+
+<div class="prompt">
+    <p>In this year:</p>
+    <p class="prompt-body" id="new-card-description">{{ new_event.description }}</p>
+    <p>
+    {% if score > 1 %}
+        Relative to the following events, when did this happen?
+    {% else %}
+        Relative to the following event, when did this happen?
+    {% endif %}
+    
+    </p>
+</div>
+
+<br>
+
+<div class="center hand">
+    {% for display_card in display_hand %}
+        {% if display_card.2 == "placeholder" %}
+            <div class="card-spot" onclick="selectCardSpot({{ display_card.0 }})">
+                <div class="card-spot-label">
+                    <i class="fa fa-question"></i>
+                </div>
+            </div>
+        {% elif display_card.2 == "hidden" %}
+            <div id="correct-card" class="card" style="display: none">
+                <h1 class="card-year" id="correct-card-year">
+                    {% if display_card.1 == true %}<small class="grayed">c.</small>{% endif %}
+                    {% if display_card.0 >= 0 %}
+                        {{ display_card.0 }}
+                    {% else %}
+                        {{ 0 - display_card.0 }} <small class="grayed">BCE</small>
+                    {% endif %}
+                </h1>
+                <p id="correct-card-description">{{ display_card.2 }}</p> 
+            </div>
+        {% else %}
+            <div class="card">
+                <h1 class="card-year">
+                    {% if display_card.1 == true %}<small class="grayed">c.</small>{% endif %}
+                    {% if display_card.0 >= 0 %}
+                        {{ display_card.0 }}
+                    {% else %}
+                        {{ 0 - display_card.0 }} <small class="grayed">BCE</small>
+                    {% endif %}
+                </h1>
+                <p>{{ display_card.2 }}</p> 
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>
+
+<div id="response-correct" class="response response-correct" style="display: none;">
+    <p class="good">
+        <b>Correct! The event occured in
+            {% if new_event.circa == true %}
+                around
+            {% else %}
+                in 
+            {% endif %}
+            {% if new_event.year >= 0 %}
+                {{ new_event.year }}.
+            {% else %}
+                {{ 0 - new_event.year }} BCE.
+            {% endif %}
+        </b>
+    </p>
+    <p>
+        You now have <b class="good">{{ score + 1 }}</b> cards! <a class="link-button" href="{{ next_round_url }}">Next <i class="fa fa-arrow-right"></i></a>
+    </p>
+</div>
+
+<div id="response-incorrect" class="response response-incorrect" style="display: none;">
+    <p class="bad">
+        <b>
+            Whoops, not quite! The event occured
+            {% if new_event.circa == true %}
+                around
+            {% else %}
+                in 
+            {% endif %}
+            {% if new_event.year >= 0 %}
+                {{ new_event.year }}.
+            {% else %}
+                {{ 0 - new_event.year }} BCE.
+            {% endif %}
+        </b>
+    </p>
+    <p>
+        Well done! You got <b class="good">{{ score }}</b> cards correct! <a class="link-button" href="{{ restart_url }}"><i class="fa fa-play"></i> Play Again</a>
+    </p>
+</div>
+
+<span id="new-card-position" class="{{ (new_event_position * 169) + 24 }}"></span>
+<span id="done" class="0"></span>
+
+{% endblock content %}
