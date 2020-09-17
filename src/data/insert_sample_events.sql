@@ -1,4 +1,4 @@
-INSERT INTO public.events (year, circa, description)
+INSERT INTO events (year, circa, description)
 VALUES 
 (1066, false, 'William The Conqueror defeats Harold at the Battle of Hastings.'),
 (1346, false, 'The Bubonic Plague (also known as the Black Death) arrives in England.'),
