@@ -45,7 +45,8 @@ pub fn get_events(connection: &PgConnection, player_hand: &Hand) -> Vec<Event> {
     use crate::schema::hands::dsl as hands;
 
     // query for events for a given hand
-    events::events.select((events::id, events::year, events::circa, &events::description))
+    events::events
+        .select((events::id, events::year, events::circa, &events::description))
         .inner_join(cards::cards.on(events::id.eq(cards::event_id)))
         .inner_join(hands::hands.on(cards::hand_id.eq(hands::id)))
         .filter(hands::id.eq(player_hand.id))
@@ -59,18 +60,23 @@ pub fn get_new_event(connection: &PgConnection, player_hand: &Hand) -> Event {
     use crate::schema::cards::dsl as cards;
     use crate::schema::hands::dsl as hands;
 
-    // get ids of events already in hand
-    let hand_event_ids = events::events.select(events::id)
+    // get ids and years of events already in hand
+    let hand_event_info = events::events
+        .select((events::id, events::year))
         .inner_join(cards::cards.on(events::id.eq(cards::event_id)))
         .inner_join(hands::hands.on(cards::hand_id.eq(hands::id)))
         .filter(hands::id.eq(player_hand.id))
         .order(events::year)
-        .load::<i32>(connection)
+        .load::<(i32, i32)>(connection)
         .unwrap_or(vec![]);
+    let hand_event_ids: Vec<i32> = hand_event_info.clone().into_iter().map(|x| x.0).collect();
+    let hand_event_years: Vec<i32> = hand_event_info.into_iter().map(|x| x.1).collect();
 
     // query for random event (of those not already in hand)
     no_arg_sql_function!(RANDOM, (), "Represents the SQL RANDOM() function");
-    let result = events::events.filter(events::id.ne_all(hand_event_ids))
+    let result = events::events
+        .filter(events::id.ne_all(hand_event_ids))
+        .filter(events::year.ne_all(hand_event_years))
         .order(RANDOM)
         .limit(1)
         .load::<Event>(connection)

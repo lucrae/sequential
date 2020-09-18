@@ -73,6 +73,8 @@ fn game(s: i32) -> Template {
     // for highlighted events (i32, bool, String) = (year, circa, description, "event-highlighted")
     let mut panels: Vec<(i32, bool, String, String)> = Vec::new();
     for i in 0..=hand_events.len() {
+
+        // append placeholder
         if i == new_event_position {
             panels.push((i as i32, true, "".to_string(), "placeholder".to_string()));
         } else {
@@ -80,6 +82,8 @@ fn game(s: i32) -> Template {
         }
 
         if i < hand_events.len() {
+
+            // append event
             panels.push((
                 hand_events[i].year,
                 hand_events[i].circa,
@@ -88,6 +92,8 @@ fn game(s: i32) -> Template {
             ));
         };
     }
+
+    println!("{:?}", panels);
 
     // set context vars and render template
     let context = json!({
