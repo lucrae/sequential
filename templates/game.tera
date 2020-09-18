@@ -1,13 +1,13 @@
 {% extends "_base" %}
 {% block content %}
 
-<div class="center-block">
+<div id="center-block" class="center-block">
 
     {# prompt block #}
     <div class="prompt-block">
         <div class="prompt-top-text">
             <p>
-                Relative to the list of events below, when did the following event happen?
+                Relative to the timeline below, when did the following event happen?
             </p>
         </div>
         <div id="prompt-event-panel" class="event-panel">
@@ -26,6 +26,14 @@
     </div>
 
     {# panel block #}
+    <div class="panel-block-header">
+        <div>Timeline</div>
+        {% if score > 1 %}
+            <div id="running-score-div" class="align-left">Score: <span id="running-score" class="score">{{ score }}</span></div>
+        {% else %}
+             <div id="running-score-div" class="align-left" style="display: none;">Score: <span id="running-score" class="score">{{ score }}</span></div>
+        {% endif %}
+    </div>
     <div class="panel-block">
 
         <span class="grayed"><i class="fa fa-arrow-up"></i> Beginning of Time</span>
@@ -69,6 +77,8 @@
 
         <span class="grayed"><i class="fa fa-arrow-down"></i> Present Day</span>
     </div>
+
+    <div style="height: 200px"></div>
 
     <div class="special" style="display: none;">
         <span id="session-hash">{{ session_hash }}</span>

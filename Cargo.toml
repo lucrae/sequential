@@ -1,5 +1,5 @@
 [package]
-name = "timeonline"
+name = "sequential"
 version = "0.1.0"
 authors = ["Lucien Rae Gentil <lucienraegentil@gmail.com>"]
 edition = "2018"

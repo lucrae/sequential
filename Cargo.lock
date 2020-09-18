@@ -1025,6 +1025,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "sequential"
+version = "0.1.0"
+dependencies = [
+ "diesel",
+ "dotenv",
+ "rand",
+ "rocket",
+ "rocket_contrib",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "serde"
 version = "1.0.116"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1179,19 +1192,6 @@ dependencies = [
  "libc",
  "wasi 0.10.0+wasi-snapshot-preview1",
  "winapi 0.3.9",
-]
-
-[[package]]
-name = "timeonline"
-version = "0.1.0"
-dependencies = [
- "diesel",
- "dotenv",
- "rand",
- "rocket",
- "rocket_contrib",
- "serde",
- "serde_json",
 ]
 
 [[package]]

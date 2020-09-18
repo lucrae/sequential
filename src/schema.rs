@@ -11,7 +11,7 @@ table! {
         id -> Int4,
         year -> Int4,
         circa -> Bool,
-        description -> Text,
+        description -> Varchar,
     }
 }
 
