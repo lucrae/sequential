@@ -25,7 +25,11 @@ use models::{Event, Hand, Card};
 
 #[get("/")]
 fn index(_remote_addr: std::net::SocketAddr) -> Redirect {
+    Redirect::to(uri!(game: 0))
+}
 
+#[get("/game")]
+fn game_blank() -> Redirect {
     Redirect::to(uri!(game: 0))
 }
 
@@ -93,8 +97,6 @@ fn game(s: i32) -> Template {
         };
     }
 
-    println!("{:?}", panels);
-
     // set context vars and render template
     let context = json!({
         "session_hash": session_hash,
@@ -130,7 +132,7 @@ fn main() {
 
     // run rocket application
     rocket::ignite()
-        .mount("/", routes![index, game]) // GET methods
+        .mount("/", routes![index, game, game_blank]) // GET methods
         .mount("/", routes![update_hand, delete_hand]) // POST methods
         .mount("/static", StaticFiles::from("static")) // static resources
         .attach(Template::fairing()) 

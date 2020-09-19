@@ -16,9 +16,6 @@ function selectCorrect(position) {
     var yearDisplayLeadIn = formatYearLeadIn(year, circa);
     var yearDisplayFancy = formatFancyYear(year, circa);
 
-    // update hand to have new event
-    $.post(`update_hand?hand_id=${handID}&event_id=${newEventID}`);
-
     // update running score
     $('#running-score-div').attr("style", `display: inline;`);
     $('#running-score').text(score + 1);
@@ -75,6 +72,9 @@ function selectCorrect(position) {
     // scroll back to top
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    // update hand to have new event
+    $.post(`update_hand?hand_id=${handID}&event_id=${newEventID}`);
 }
 
 
@@ -90,12 +90,16 @@ function selectIncorrect(position) {
     var yearDisplayLeadIn = formatYearLeadIn(year, circa);
     var yearDisplayFancy = formatFancyYear(year, circa);
 
-    // delete hand
-    $.post(`delete_hand?hand_id=${handID}`);
-
     // pluralise/singularise "event/s"
     var eventsWordDisplay = "event"
     if (score > 1) {eventsWordDisplay += "s"}
+
+    // replace incorrectly-selected placeholder with incorrect indicator
+    var incorrectIndicator = $(`
+    <div class="placeholder-panel-incorrect" >
+        <i class="fa fa-times"></i>
+    </div>`);
+    $("#placeholder-panel-" + position).replaceWith(incorrectIndicator);
 
     // construct event panel
     var correctEvent = $(`
@@ -114,16 +118,6 @@ function selectIncorrect(position) {
     // replace placeholder panel with event panel
     var placeholderPanel = $("#placeholder-panel-" + newEventPosition);
     placeholderPanel.replaceWith(correctEvent);
-
-    // construct incorrect indicator
-    var incorrectIndicator = $(`
-    <div class="placeholder-panel-incorrect" >
-        <i class="fa fa-times"></i>
-    </div>
-    `);
-
-    // replace incorrectly-selected placeholder with incorrect indicator
-    $("#placeholder-panel-" + position).replaceWith(incorrectIndicator);
 
     // construct prompt saying answer is correct
     var messageIncorrect = getRandomMessageIncorrect();
@@ -167,6 +161,9 @@ function selectIncorrect(position) {
     // scroll back to top
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    // delete hand
+    $.post(`delete_hand?hand_id=${handID}`);
 }
 
 function generateAchievementPanel(score, displayNext, isEqual) {

@@ -1,37 +1,47 @@
 :root {
-    --card-height: 50px;
+    --center-block-width: 960px;
+    --card-height: 50px; /* (minimum) */
 
-    --panel-light-light: #f4f4f4;
-    --panel-light: #eee;
-    --panel-medium-light: #ddd;
-    --panel-medium: #ccc;
-    --panel-dark: #666; 
-    --panel-dark-dark: #444;
+    --panel-light-light: #f7faff;
+    --panel-light: #eceff4;
+    --panel-medium-light: #e5e9f0;
+    --panel-medium: #d8dee9;
+    --panel-medium-dark: #9aa5b9;
+    --panel-dark: #4c566a; 
+    --panel-dark-dark: #2e3440;
     --panel-accent: var(--panel-dark);
 
-    --correct: rgb(13, 139, 13);
-    --correct-dark: rgb(16, 88, 16);
-    --incorrect: rgb(223, 88, 26);
+    --correct: #548827;
+    --correct-dark: #335714;
+    --incorrect: #db7151;
 
-    --achievement: rgb(247, 176, 46);
+    --achievement: #f7ac17;
 
-    --center-block-width: 960px;
+    --backing: #6d2020;
+    --backing-light:#c25454;
 }
 
 /* ============================================================================
 General
 ============================================================================ */
 
-html, body {
+body {
     font-family: 'Courier New', Courier, monospace;
     color: var(--panel-dark);
     background-color: var(--panel-light);
     margin: 0;
+    /* background-image: url('/static/images/background.jpg'); */
+    background-attachment: fixed; 
+    background-size: cover;
 }
 
 .header-block {
-    max-width: var(--center-block-width);
-    margin: 32px auto;
+    margin: 16px auto 0 auto;
+    background-color: var(--backing);
+    color: white;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: calc(var(--center-block-width) - 24px * 2);
 }
 
 .title {
@@ -39,11 +49,15 @@ html, body {
     font-size: 24px;
 }
 
+.title i {
+    color: var(--backing-light);
+}
+
 .center-block {
     background-color: white;
     max-width: calc(var(--center-block-width) - 78px * 2); 
     padding: 78px;
-    margin: 32px auto;
+    margin: 16px auto;
     border-radius: 8px;
 }
 
@@ -85,11 +99,11 @@ Prompt
 }
 
 .prompt-top-text {
-    font-weight: bold;
     text-align: center;
 }
 
 .prompt-bottom-text {
+    font-weight: bold;
     text-align: center;
 }
 
@@ -184,22 +198,23 @@ Events
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
-    background-color: var(--panel-light-light);
+    background-color: var(--panel-light);
     margin: 8px;
-    transition: margin 0.5s, height 0.5s, opacity 0.5s;
+    transition: margin 0.5s, height 0.5s, opacity 0.5s, background-color 0.5s;
     height: 30px;
 }
 
 .placeholder-panel:hover {
     margin: 4px;
     cursor: pointer;
+    background-color: var(--panel-medium);
     height: var(--card-height);
 }
 
 .placeholder-panel i {
     padding: 6px 0;
     transition: 0.5s;
-    color: var(--panel-medium);
+    color: var(--panel-medium-dark);
 }
 
 .placeholder-panel:hover i {
@@ -251,4 +266,9 @@ Misc.
 
 .align-left {
     margin-left: auto;
+}
+
+.small-text {
+    font-size: 10pt;
+    color: var(--panel-medium-dark);
 }

@@ -84,7 +84,7 @@ pub fn get_new_event(connection: &PgConnection, player_hand: &Hand) -> Event {
 
     match result.len() {
         1 => result[0].clone(),
-        _ => panic!("No events remaining!"),
+        _ => panic!("No valid events remaining!"),
     }
 }
 
