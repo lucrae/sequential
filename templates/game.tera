@@ -29,7 +29,14 @@
 
     {# panel block #}
     <div class="panel-block-header">
-        <div><i class="fa fa-clock"></i> Timeline</div>
+        <div>Timeline</div>
+
+        {% if extra_lives > 0 %}
+            <div id="running-extra-lives-div" class="align-left">Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
+        {% else %}
+             <div id="running-extra-lives-div" class="align-left" style="display: none;">Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
+        {% endif %}
+
         {% if score > 1 %}
             <div id="running-score-div" class="align-left">Score: <span id="running-score" class="score">{{ score }}</span></div>
         {% else %}
@@ -93,8 +100,6 @@
             
     </div>
 
-    <div style="height: 100px"></div>
-
     <div class="special" style="display: none;">
         <span id="session-hash">{{ session_hash }}</span>
         <span id="hand-id">{{ hand_id }}</span>
@@ -103,7 +108,8 @@
         <span id="new-event-circa">{{ new_event.circa }}</span>
         <span id="new-event-description">{{ new_event.description }}</span>
         <span id="new-event-position">{{ new_event_position }}</span>
-        <span id="score">{{ score }}</span> 
+        <span id="score">{{ score }}</span>
+        <span id="extra-lives">{{ extra_lives }}</span> 
     </div>
 </div>
 

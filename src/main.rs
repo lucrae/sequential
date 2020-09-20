@@ -66,6 +66,9 @@ fn game(s: i32) -> Template {
         },
     };
 
+    // get lives
+    let extra_lives = hand.extra_lives;
+
     // get events
     let hand_events = hand::get_events(&connection, &hand);
     let hand_new_event = hand::get_new_event(&connection, &hand);
@@ -74,7 +77,6 @@ fn game(s: i32) -> Template {
     // construct display hand
     // for placeholders (index, correct, "", "placeholder")
     // for events (i32, bool, String) = (year, circa, description, "event")
-    // for highlighted events (i32, bool, String) = (year, circa, description, "event-highlighted")
     let mut panels: Vec<(i32, bool, String, String)> = Vec::new();
     for i in 0..=hand_events.len() {
 
@@ -100,6 +102,7 @@ fn game(s: i32) -> Template {
     // set context vars and render template
     let context = json!({
         "session_hash": session_hash,
+        "extra_lives": extra_lives,
         "hand_id": hand.id,
         "new_event": hand_new_event,
         "new_event_position": new_event_position,
@@ -128,12 +131,20 @@ fn delete_hand(hand_id: i32) {
     hand::delete_hand(&connection, hand_id);
 }
 
+#[post("/update_extra_lives?<hand_id>&<amount>")]
+fn update_extra_lives(hand_id: i32, amount: i32) {
+
+    // add event to hand
+    let connection = db::establish_connection();
+    hand::update_extra_lives(&connection, hand_id, amount);
+}
+
 fn main() {
 
     // run rocket application
     rocket::ignite()
         .mount("/", routes![index, game, game_blank]) // GET methods
-        .mount("/", routes![update_hand, delete_hand]) // POST methods
+        .mount("/", routes![update_hand, delete_hand, update_extra_lives]) // POST methods
         .mount("/static", StaticFiles::from("static")) // static resources
         .attach(Template::fairing()) 
         .launch();

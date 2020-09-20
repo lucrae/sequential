@@ -19,6 +19,7 @@ table! {
     hands (id) {
         id -> Int4,
         session_hash -> Int4,
+        extra_lives -> Int4,
     }
 }
 

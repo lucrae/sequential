@@ -2,7 +2,7 @@
     --center-block-width: 960px;
     --card-height: 50px; /* (minimum) */
 
-    --panel-light-light: #f7faff;
+    --panel-light-light: #f5f6f8;
     --panel-light: #eceff4;
     --panel-medium-light: #e5e9f0;
     --panel-medium: #d8dee9;
@@ -13,8 +13,9 @@
 
     --correct: #548827;
     --correct-dark: #335714;
-    --incorrect: #db7151;
+    --incorrect: #e65b24;
 
+    --life: #a01a1a;
     --achievement: #f7ac17;
 
     --backing: #6d2020;
@@ -30,9 +31,14 @@ body {
     color: var(--panel-dark);
     background-color: var(--panel-light);
     margin: 0;
-    /* background-image: url('/static/images/background.jpg'); */
+    background-image: url('/static/images/background.jpg');
     background-attachment: fixed; 
     background-size: cover;
+    line-height: 130%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .header-block {
@@ -45,6 +51,7 @@ body {
 }
 
 .title {
+    color: white;
     font-weight: bold;
     font-size: 24px;
 }
@@ -134,10 +141,22 @@ Prompt
 }
 
 .achievement-panel p {
+    font-weight: normal;
     flex: 80%;
     padding: 8px;
     margin: 0;
 }
+
+.life-panel {
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--life);
+}
+
+/* ============================================================================
+Events
+============================================================================ */
 
 .panel-block-header {
     font-weight: bold;
@@ -147,10 +166,6 @@ Prompt
     margin-bottom: 32px;
     border-bottom: 2px solid var(--panel-light-light);
 }
-
-/* ============================================================================
-Events
-============================================================================ */
 
 .panel-block {
     display: flex;
@@ -238,8 +253,8 @@ Events
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
-    background-color: var(--panel-light-light);
-    color: var(--incorrect);
+    background-color: var(--incorrect);
+    color: white;
     margin: 8px;
     height: 30px;
 }
@@ -271,4 +286,8 @@ Misc.
 .small-text {
     font-size: 10pt;
     color: var(--panel-medium-dark);
+}
+
+.life {
+    color: var(--life);
 }

@@ -9,7 +9,7 @@ pub fn add_hand(connection: &PgConnection, session_hash: i32) {
     use crate::schema::hands::dsl as hands;
 
     // set up values and insert new card
-    let new_hand = NewHand { session_hash };
+    let new_hand = NewHand { session_hash, extra_lives: 0 };
     diesel::insert_into(hands::hands)
         .values(&new_hand)
         .execute(connection)
@@ -99,3 +99,13 @@ pub fn add_card(connection: &PgConnection, hand_id: i32, event_id: i32) {
         .expect("Error putting event into hand");
 }
 
+pub fn update_extra_lives(connection: &PgConnection, hand_id: i32, amount: i32) {
+    use crate::schema::hands::dsl as hands;
+
+    // update extra lives in hand
+    diesel::update(hands::hands
+        .find(hand_id))
+        .set(hands::extra_lives.eq(amount))
+        .execute(connection)
+        .expect("Error add life to hand");
+}

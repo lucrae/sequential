@@ -1,0 +1,2 @@
+ALTER TABLE hands
+ADD extra_lives INTEGER NOT NULL DEFAULT 0;

@@ -13,6 +13,7 @@ pub struct Event {
 pub struct Hand {
     pub id: i32,
     pub session_hash: i32,
+    pub extra_lives: i32
 }
 
 #[derive(Debug, Clone, Copy, Queryable)]
@@ -26,6 +27,7 @@ pub struct Card {
 #[table_name="hands"]
 pub struct NewHand {
     pub session_hash: i32,
+    pub extra_lives: i32,
 }
 
 #[derive(Insertable)]
@@ -58,7 +60,7 @@ impl Clone for Event {
 }
 
 impl Hand {
-    pub fn new(id: i32, session_hash: i32) -> Self {
-        Self { id, session_hash }
+    pub fn new(id: i32, session_hash: i32, extra_lives: i32) -> Self {
+        Self { id, session_hash, extra_lives }
     }
 }
