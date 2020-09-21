@@ -285,7 +285,7 @@ Misc.
 
 .small-text {
     font-size: 10pt;
-    color: var(--panel-medium-dark);
+    color: var(--panel-dark);
 }
 
 .life {
