@@ -279,7 +279,7 @@ function generateAchievementPanel(score, displayNext, isEqual) {
         else {
             panel += `
             <div class="life-panel">
-                <i class="fa fa-heart"></i> You get an extra life!<br>It'll give you a second chance for one incorrect choice.
+                <i class="fa fa-heart"></i> You get an extra life!<br><span style="font-weight: normal;">It'll give you a second chance for one incorrect choice.</span>
             </div>
             `
         };

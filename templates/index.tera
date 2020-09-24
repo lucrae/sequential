@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div id="center-block" class="center-block" style="padding: 42px 0; margin-top: 64px;">
+<div class="center-block index-panel">
 
     <div class="centered">
         <p>

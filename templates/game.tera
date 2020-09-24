@@ -29,12 +29,10 @@
 
     {# panel block #}
     <div class="panel-block-header">
-        <div>Timeline</div>
-
         {% if extra_lives > 0 %}
-            <div id="running-extra-lives-div" class="align-left">Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
+            <div id="running-extra-lives-div" >Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
         {% else %}
-             <div id="running-extra-lives-div" class="align-left" style="display: none;">Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
+            <div id="running-extra-lives-div" style="display: none;">Extra Lives: <i class="fa fa-heart life"></i> <span id="running-extra-lives" class="life">{{ extra_lives }}</span></div>
         {% endif %}
 
         {% if score > 1 %}

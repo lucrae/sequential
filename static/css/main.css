@@ -52,8 +52,6 @@ a {
     color: var(--link);
 }
 
-
-
 .header-block {
     margin: 16px auto 0 auto;
     background-color: var(--backing);
@@ -65,7 +63,6 @@ a {
 
 @media only screen and (max-device-width : 640px){
     .header-block {
-
         width: 80%;
     }
 }
@@ -102,7 +99,6 @@ a {
     }
 }
 
-
 .link-button {
     border-radius: 4px;
     background-color: var(--correct);
@@ -132,12 +128,32 @@ a {
     background-color: var(--correct);
 }
 
+.index-panel {
+    padding: 42px 0;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+@media only screen and (max-device-width : 640px){
+    .index-panel {
+        padding: 42px 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+
 /* ============================================================================
 Prompt
 ============================================================================ */
 
 .prompt-block {
-    margin-bottom: 100px;
+    margin-bottom: 24px;
+}
+
+@media only screen and (max-device-width : 640px){
+    .prompt-block {
+        margin-bottom: 24px;
+    }
 }
 
 .prompt-top-text {
@@ -180,6 +196,19 @@ Prompt
     flex: 80%;
     padding: 8px;
     margin: 0;
+    line-height: 100%;
+}
+
+@media only screen and (max-device-width : 640px){
+    .achievement-panel {
+        flex-direction: column;
+    }
+
+    .achievement-panel img {
+        margin-top: 4px;
+        max-height: 100px;
+        margin-bottom: 14px;
+    }
 }
 
 .life-panel {
@@ -198,8 +227,7 @@ Events
     display: flex;
     max-width: 100%;
     padding: 8px;
-    margin-bottom: 32px;
-    border-bottom: 2px solid var(--panel-light-light);
+    margin-bottom: 16px;
 }
 
 .panel-block {
@@ -228,6 +256,17 @@ Events
     display: flex;
     align-items: center;
 }
+
+@media only screen and (max-device-width : 640px){
+    .event-panel-year {
+        flex: 25%;
+    }
+
+    .event-panel-description {
+        flex: 75%;
+    }
+}
+
 
 .event-panel-year p {
     width: 100%;
@@ -344,4 +383,25 @@ footer {
     color: white;
     text-align: center;
     padding: 16px;
+}
+
+/* ==========================================================================
+   Mobile / Desktop
+   ========================================================================== */
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media only screen and (max-device-width : 640px){
+    .mobile-only {
+        display: inline-block;
+    }
+    .desktop-only {
+        display: none;
+    }
 }
