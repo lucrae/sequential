@@ -65,7 +65,8 @@ a {
 
 @media only screen and (max-device-width : 640px){
     .header-block {
-        border-radius: 0;
+
+        width: 80%;
     }
 }
 
@@ -97,6 +98,7 @@ a {
     .center-block {
         padding: 8px;
         border-radius: 0;
+        width: auto;
     }
 }
 
