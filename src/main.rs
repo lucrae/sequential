@@ -24,8 +24,13 @@ use rocket_contrib::serve::StaticFiles;
 use models::{Event, Hand, Card};
 
 #[get("/")]
-fn index(_remote_addr: std::net::SocketAddr) -> Redirect {
-    Redirect::to(uri!(game: 0))
+fn index(_remote_addr: std::net::SocketAddr) -> Template {
+    Template::render("index", &json!({}))
+}
+
+#[get("/about")]
+fn about() -> Template {
+    Template::render("about", &json!({}))
 }
 
 #[get("/game")]
@@ -143,7 +148,7 @@ fn main() {
 
     // run rocket application
     rocket::ignite()
-        .mount("/", routes![index, game, game_blank]) // GET methods
+        .mount("/", routes![index, about, game, game_blank]) // GET methods
         .mount("/", routes![update_hand, delete_hand, update_extra_lives]) // POST methods
         .mount("/static", StaticFiles::from("static")) // static resources
         .attach(Template::fairing()) 

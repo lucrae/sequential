@@ -88,16 +88,11 @@
     </div>
 
     <div style="margin-top: 64px;">
-        <p class="small-text">
-            Note:
-            <ul>
-                <li class="small-text"><b>BCE</b> means the date is the number of years before the current era (CE/AD).</li>
-                <li class="small-text"><b>c.</b> is short for "circa", and indicates that the date is considered approximate.</li>
-            </ul>
+        <p class="centered small-text">
+            <span class="dark-grayed">Note:</span>
+            <b>BCE</b> means that the date is the number of years before the current era (CE/AD).<br>
+            <b>c.</b> is short for 'circa' and indicates that the date is considered approximate.
         </p>
-        </p>
-        <p class="bottom-info">
-            
     </div>
 
     <div class="special" style="display: none;">
@@ -112,5 +107,12 @@
         <span id="extra-lives">{{ extra_lives }}</span> 
     </div>
 </div>
+
+<div class="footer-block">
+    <p class="centered">
+        <a href="/about"><i class="fa fa-info-circle"></i> About & Contact</a>
+    </p>
+</div>
+<br>
 
 {% endblock content %}

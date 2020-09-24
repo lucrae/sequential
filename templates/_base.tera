@@ -6,7 +6,8 @@
         <meta charset="UTF-8">
         <title>Sequential</title>
 
-        {# icons #}
+        {# fonts/icons #}
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/49e791e245.js" crossorigin="anonymous"></script>
 
         {# CSS #}
@@ -15,10 +16,16 @@
         {# JavaScript #}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="static/js/game.js"></script>
+
     </head>
     <body>
         <div class="header-block" href="">
-            <a class="title" href="/"><i class="fa fa-hourglass-half"></i> Sequential</a>
+            
+            <div class="title-image-block">
+                <a href="/"><img src="static/images/logo_beta.png"></a>
+            </div>
+            
+            {# <a class="title" href="/"><i class="fa fa-hourglass-half"></i> Sequential</a> #}
         </div>
         {% block content %}{% endblock content %}
     </body>

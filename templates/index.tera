@@ -1,0 +1,24 @@
+{% extends "_base" %}
+{% block content %}
+
+<br><br><br>
+
+<div id="center-block" class="center-block" style="padding: 48px;">
+
+<div class="centered">
+    <p>
+        Pivotal moments in time have shaped civilisation as we know it today.
+    </p>
+    <p>
+        <b>Can you place history in order?</b>
+    </p>
+    <br>
+    <a class="link-button" href="/game">
+        <i class="fa fa-play"></i> Start
+    </a>
+    <br><br>
+</div>
+
+
+
+{% endblock content %}

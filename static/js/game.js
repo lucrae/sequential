@@ -81,7 +81,7 @@ function selectCorrect(position) {
     $(".placeholder-panel").addClass("placeholder-panel-gone");
 
     // scroll back to top
-    scrollToTop();
+    scrollToTop(200);
 
     // update hand to have new event
     $.post(`update_hand?hand_id=${handID}&event_id=${newEventID}`);
@@ -180,17 +180,20 @@ function selectIncorrect(position) {
                 <a class="link-button" href="/game?s=0">
                 <i class="fa fa-play"></i> Play Again</a>
             </p>
+            <p style="margin-top: 28px; font-weight: normal;">
+                <i class="fa fa-user"></i> Like Sequential? Share it with a friend and see how well they do!
+            </p>
         </div>
         `)
         $("#prompt-bottom-text").replaceWith(endPanel);
         endPanel.hide();
-        endPanel.slideDown(1500);
+        endPanel.slideDown(500);
 
         // remove other placeholders
         $(".placeholder-panel").addClass("placeholder-panel-gone");
 
         // scroll back to top
-        scrollToTop();
+        scrollToTop(1000);
 
         // delete hand
         $.post(`delete_hand?hand_id=${handID}`);
@@ -354,8 +357,8 @@ function formatFancyYear(year, circa) {
     return yearDisplayFancy;
 }
 
-function scrollToTop() {
-    $("html, body").delay(200).animate({
+function scrollToTop(delay) {
+    $("html, body").delay(delay).animate({
         scrollTop: 0 
     }, 1000);
 }
