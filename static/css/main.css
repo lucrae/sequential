@@ -257,16 +257,6 @@ Events
     align-items: center;
 }
 
-@media only screen and (max-device-width : 640px){
-    .event-panel-year {
-        flex: 25%;
-    }
-
-    .event-panel-description {
-        flex: 75%;
-    }
-}
-
 
 .event-panel-year p {
     width: 100%;
@@ -282,6 +272,20 @@ Events
 .event-panel-description p {
     margin: 8px;
     padding: 10px;
+}
+
+@media only screen and (max-device-width : 640px){
+    .event-panel-year {
+        flex: 25%;
+    }
+
+    .event-panel-description {
+        flex: 75%;
+    }
+
+    .event-panel-description p {
+        padding-left: 0;
+    }
 }
 
 .placeholder-panel {
