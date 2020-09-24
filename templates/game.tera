@@ -108,11 +108,4 @@
     </div>
 </div>
 
-<div class="footer-block">
-    <p class="centered">
-        <a href="/about"><i class="fa fa-info-circle"></i> About & Contact</a>
-    </p>
-</div>
-<br>
-
 {% endblock content %}

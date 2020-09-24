@@ -20,7 +20,7 @@
     </head>
     <body>
         <div class="header-block" href="">
-            
+                
             <div class="title-image-block">
                 <a href="/"><img src="static/images/logo_beta.png"></a>
             </div>
@@ -29,5 +29,11 @@
         </div>
         {% block content %}{% endblock content %}
     </body>
-    <footer></footer>
+    <footer>
+        <div class="footer">
+            <a href="/about"><i class="fa fa-info-circle"></i> About & Contact</a> &copy; <a href="https://lucienrae.com">Lucien Rae</a> 2020 
+        </div>
+    </footer>
+    
 </html>
+

@@ -3,9 +3,11 @@
 
 <div id="center-block" class="center-block">
 
-<h1>Page Under Construction</h1>
-<p>
-    <a href="/">Go back to main page.</a>
-</p>
+    <h1>Page Under Construction</h1>
+    <p>
+        <a href="/">Go back to main page.</a>
+    </p>
+
+</div>
 
 {% endblock content %}

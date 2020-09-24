@@ -1,5 +1,0 @@
-# Info: https://rocket.rs/v0.4/guide/configuration/
-
-[global]
-address = "localhost"
-port = 8001

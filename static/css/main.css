@@ -21,7 +21,7 @@
     --backing: #842e17;
     --backing-light:#c25454;
 
-    --link: #3a55af;
+    --link: #5070db;
     --link-active: #003cff;
 }
 
@@ -29,7 +29,9 @@
 General
 ============================================================================ */
 
-body {
+html, body {
+    height: 100%;
+    position: relative;
     font-family: 'Roboto Mono', monospace;
     color: var(--panel-dark);
     background-color: var(--panel-light);
@@ -40,14 +42,17 @@ body {
     line-height: 130%;
 }
 
+body {
+    display: flex; 
+    flex-direction: column;
+}
+
 a {
     text-decoration: none;
     color: var(--link);
 }
 
-/* a:hover, a:active {
-    color: var(--link-active);
-} */
+
 
 .header-block {
     margin: 16px auto 0 auto;
@@ -55,7 +60,7 @@ a {
     color: white;
     border-radius: 8px;
     padding: 24px;
-    max-width: calc(var(--center-block-width) - 24px * 2);
+    width: calc(var(--center-block-width) - 24px * 2);
 }
 
 @media only screen and (max-device-width : 640px){
@@ -82,7 +87,7 @@ a {
 
 .center-block {
     background-color: white;
-    max-width: calc(var(--center-block-width) - 78px * 2); 
+    width: calc(var(--center-block-width) - 78px * 2); 
     padding: 78px;
     margin: 16px auto;
     border-radius: 8px;
@@ -180,14 +185,6 @@ Prompt
     text-align: center;
     font-weight: bold;
     color: var(--life);
-}
-
-.footer-block {
-    background-color: var(--panel-medium-light);
-    max-width: calc(var(--center-block-width) - 4px * 2); 
-    padding: 4px;
-    margin: 16px auto;
-    border-radius: 8px;
 }
 
 /* ============================================================================
@@ -332,4 +329,17 @@ Misc.
 
 .life {
     color: var(--life);
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: auto; 
+}
+
+.footer {
+    background-color: var(--panel-dark-dark);
+    color: white;
+    text-align: center;
+    padding: 16px;
 }
