@@ -187,13 +187,13 @@ function selectIncorrect(position) {
         `)
         $("#prompt-bottom-text").replaceWith(endPanel);
         endPanel.hide();
-        endPanel.delay(2000).slideDown(500);
+        endPanel.delay(1500).slideDown(500);
 
         // remove other placeholders
         $(".placeholder-panel").addClass("placeholder-panel-gone");
 
         // scroll back to top
-        scrollToTop(1000);
+        scrollToTop(500);
 
         // delete hand
         $.post(`delete_hand?hand_id=${handID}`);
@@ -237,7 +237,7 @@ function generateAchievementPanel(score, displayNext, isEqual) {
         40: {
             "title": "The Digital Clock (40+ events)",
             "description": "As the world moved to digital, time-keeping did too, bringing a wave of low-cost and mass-producable precision time-keeping devices that could be packed with many other features of modern digital devices.",
-            "image": "static/images/achievements/digital_clockh.jpg",
+            "image": "static/images/achievements/digital_clock.jpg",
             "next": "We're going to run out of history!<br>Final achievement at 50 events."
         },
         50: {
