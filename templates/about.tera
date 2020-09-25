@@ -3,10 +3,73 @@
 
 <div id="center-block" class="center-block">
 
-    <h1>Page Under Construction</h1>
+    <h1 class="desktop-only" style="margin-top: 0;">About</h1>
+    <h1 class="mobile-only">About</h1>
+    <p>
+        Sequential is a small online game about ordering pivotal historical events. It's both a fun test of how well you know (or can guess) your history, and also quite educational. I certainly learnt a few things making it!
+    </p>
+    <p>
+        I hope it's as interesting to play is it was to make :)
+    </p>
+
+    <h1>Contact</h1>
+
+    <h3 class="heading-bar" style="margin-top: 0;"><i class="fa fa-lightbulb" style="color: var(--achievement);"></i> Have event suggestions?</h3>
+    <p>
+        Awesome! If you have a favourite invention, person, battle, or otherwise notable date you wish to be included, <b>contributions are very welcome!</b>
+    </p>
+    <p>
+        For each suggested event please provide the date and a description of the event in a (preferably full and present-tense) sentence <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event suggestion" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></span>. Please include in the date c. (circa) and BCE (before current era) if applicable.
+    </p>
+    <p>
+        Here's an example of two suggested events:
+    </p>
+    <p class="code-block">
+        1985, Nintendo releases Super Mario Bros. for the NES.<br>
+        c. 1345, The Bubonic Plague (also known as the Black Death) arrives in England.
+    </p>
+    <p>
+        <i>Accepted contributions will be acknowledged below, unless requested otherwise.</i>
+    </p>
+    <p class="small-text">
+        (Please note that events cannot be highly disputed, historically unnotable, or without sources.)
+    </p>
+
+    <h3 class="heading-bar"><i class="fa fa-question" style="color: var(--incorrect);"></i> Have a correction?</h3>
+    <p>
+        Well spotted! Please give us as much information about the event listed and the correction that should be made <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event correction" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a>. Please include source/s.
+    </p>
+    <p>
+        <i>Accepted corrections will be acknowledged below, unless requested otherwise.</i>
+    </p>
+
+    <h3 class="heading-bar"><i class="fa fa-comment-alt" style="color: var(--link);"></i> Want to contact for other reasons?</h3>
+    <p>
+        If you have any other comments, feedback, or queries, you can directly contact Sequential's creator Lucien Rae Gentil at <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;" class="nowrap"><i class="fa fa-envelope nudge-right"></i>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;</a>.
+    </p>
+
+    <h1>Credits</h1>
+    <p>
+        Development and Design:
+        <ul>
+            <li><b>Lucien Rae Gentil</b>, back-end and front-end development</li>
+            <li><b>Kamron Bhavnagri</b>, web-scraping scripting</li>
+            <li><b>Julia Rae Gentil</b>, logo and background design</li>
+        </ul>
+    </p>
+    <p>
+        Historical Event Complation Sources:
+        <ul>
+            <li><a href="https://sites.google.com/site/nccmnhistory/the-50-key-dates-of-world-history">NCCMN: 50 Key Dates of World History</a></li>
+        </ul>
+    </p>
+    
+
+
+    {# <h1>Page Under Construction</h1>
     <p>
         <a href="/">Go back to main page.</a>
-    </p>
+    </p> #}
 
 </div>
 

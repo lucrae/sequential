@@ -232,13 +232,19 @@ function generateAchievementPanel(score, displayNext, isEqual) {
             "title": "The Pocket Watch (30+ events)",
             "description": "The use of a spiral-hairspring led to the innovation of a portable precision type-keeping device, leading to the mechanisms behind pocket watches and wristwatches",
             "image": "static/images/achievements/pocket_watch.png",
-            "next": "We're going to run out of history!<br>Final achievement at 40 events."
+            "next": "You really know your dates!<br>Next achievement at 40 events."
         },
         40: {
-            "title": "The Atomic Clock (40+ events)",
+            "title": "The Digital Clock (40+ events)",
+            "description": "As the world moved to digital, time-keeping did too, bringing a wave of low-cost and mass-producable precision time-keeping devices that could be packed with many other features of modern digital devices.",
+            "image": "static/images/achievements/digital_clockh.jpg",
+            "next": "We're going to run out of history!<br>Final achievement at 50 events."
+        },
+        50: {
+            "title": "The Atomic Clock (50+ events)",
             "description": "Atomic clocks measure the electromagnetic signal that electrons in atoms emit when changing energy levels, allowing for the most precise time-keeping device to date. They are accurate to within a few seconds over trillions of years.",
             "image": "static/images/achievements/atomic_clock.jpg",
-            "next": "Congratulations! You are truly a master of dates :)"
+            "next": "Congratulations! You are truly a master of history."
         }
     }
 
