@@ -404,6 +404,7 @@ footer {
 }
 
 .heading-bar {
+    border-radius: 4px;
     background-color: var(--panel-medium-light);
     padding: 16px;
 }

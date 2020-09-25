@@ -6,7 +6,7 @@
     <h1 class="desktop-only" style="margin-top: 0;">About</h1>
     <h1 class="mobile-only">About</h1>
     <p>
-        Sequential is a small online game about ordering pivotal historical events. It's both a fun test of how well you know (or can guess) your history, and also quite educational. I certainly learnt a few things making it!
+        Sequential is an online game about putting pivotal historical events in order. It's both a fun test of how well you know (or can guess) your history, and also quite educational. I certainly learnt a few things making it!
     </p>
     <p>
         I hope it's as interesting to play is it was to make :)
@@ -19,13 +19,10 @@
         Awesome! If you have a favourite invention, person, battle, or otherwise notable date you wish to be included, <b>contributions are very welcome!</b>
     </p>
     <p>
-        Please provide a date and a single-sentence description for each suggested event (give as many as you'd like) and send <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event suggestion" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></span>.
+        Please provide a year and a single-sentence description for each suggested event (give as many as you'd like) and send <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event suggestion" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></span>.
     </p>
     <p>
-        Please include in the date c. (circa) and BCE (before current era) if applicable.
-    </p>
-    <p>
-        Here's an example:
+        Here are some examples:
     </p>
     <p class="code-block">
         1985, Nintendo releases Super Mario Bros. for the NES.<br>
@@ -36,7 +33,7 @@
         <i>Accepted contributions will be acknowledged below, unless requested otherwise.</i>
     </p>
     <p class="small-text">
-        (Please note that events cannot be highly disputed, historically unnotable, or without sources.)
+        (Please note that events cannot be highly disputed, historically unnotable, or without sources. If the date is approximate include 'c.' before the year.)
     </p>
 
     <h3 class="heading-bar"><i class="fa fa-question" style="color: var(--incorrect);"></i> Have a correction?</h3>
@@ -49,7 +46,7 @@
 
     <h3 class="heading-bar"><i class="fa fa-comment-alt" style="color: var(--link);"></i> Want to contact for other reasons?</h3>
     <p>
-        If you have any other comments, feedback, or queries, you can directly contact Sequential's creator Lucien Rae Gentil at <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;" class="nowrap"><i class="fa fa-envelope nudge-right"></i>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;</a>.
+        If you have any comments, feedback, or queries whatsoever, you can directly contact Sequential's creator Lucien Rae Gentil at <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;" class="nowrap"><i class="fa fa-envelope nudge-right"></i>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;</a>.
     </p>
 
     <h1>Credits</h1>
