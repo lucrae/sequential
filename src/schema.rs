@@ -23,14 +23,6 @@ table! {
     }
 }
 
-table! {
-    scores (id) {
-        id -> Int4,
-        ip_address -> Varchar,
-        score -> Int4,
-    }
-}
-
 joinable!(cards -> events (event_id));
 joinable!(cards -> hands (hand_id));
 
@@ -38,5 +30,4 @@ allow_tables_to_appear_in_same_query!(
     cards,
     events,
     hands,
-    scores,
 );

@@ -1,5 +1,5 @@
 use serde::Serialize;
-use super::schema::{events, hands, cards, scores};
+use super::schema::{events, hands, cards};
 
 #[derive(Debug, Serialize, Queryable)]
 pub struct Event {
@@ -23,12 +23,6 @@ pub struct Card {
     pub event_id: i32,
 }
 
-#[derive(Queryable)]
-pub struct Score {
-    pub id: i32,
-    pub ip_address: String,
-}
-
 #[derive(Insertable)]
 #[table_name="hands"]
 pub struct NewHand {
@@ -41,13 +35,6 @@ pub struct NewHand {
 pub struct NewCard {
     pub hand_id: i32,
     pub event_id: i32,
-}
-
-#[derive(Insertable)]
-#[table_name="scores"]
-pub struct NewScore {
-    pub ip_address: String,
-    pub score: i32,
 }
 
 impl Event {
