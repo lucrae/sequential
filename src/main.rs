@@ -24,7 +24,7 @@ use rocket_contrib::serve::StaticFiles;
 use models::{Event, Hand, Card};
 
 #[get("/")]
-fn index(_remote_addr: std::net::SocketAddr) -> Template {
+fn index() -> Template {
     Template::render("index", &json!({}))
 }
 
@@ -144,12 +144,20 @@ fn update_extra_lives(hand_id: i32, amount: i32) {
     hand::update_extra_lives(&connection, hand_id, amount);
 }
 
+#[post("/save_score?<score>")]
+fn save_score(remote_addr: std::net::SocketAddr, score: i32) {
+
+    // save score
+    let connection = db::establish_connection();
+    hand::save_score(&connection, remote_addr.to_string(), score);
+}
+
 fn main() {
 
     // run rocket application
     rocket::ignite()
         .mount("/", routes![index, about, game, game_blank]) // GET methods
-        .mount("/", routes![update_hand, delete_hand, update_extra_lives]) // POST methods
+        .mount("/", routes![update_hand, delete_hand, update_extra_lives, save_score]) // POST methods
         .mount("/static", StaticFiles::from("static")) // static resources
         .attach(Template::fairing()) 
         .launch();

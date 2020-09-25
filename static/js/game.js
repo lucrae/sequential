@@ -195,7 +195,8 @@ function selectIncorrect(position) {
         // scroll back to top
         scrollToTop(500);
 
-        // delete hand
+        // save score and delete hand
+        $.post(`save_score?score=${score}`);
         $.post(`delete_hand?hand_id=${handID}`);
     }
 }

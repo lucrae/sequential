@@ -3,7 +3,7 @@ use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
 
-use crate::models::{Event, Hand, Card, NewCard, NewHand};
+use crate::models::{Event, Hand, Card, Score, NewCard, NewHand, NewScore};
 
 pub fn add_hand(connection: &PgConnection, session_hash: i32) {
     use crate::schema::hands::dsl as hands;
@@ -108,4 +108,15 @@ pub fn update_extra_lives(connection: &PgConnection, hand_id: i32, amount: i32) 
         .set(hands::extra_lives.eq(amount))
         .execute(connection)
         .expect("Error add life to hand");
+}
+
+pub fn save_score(connection: &PgConnection, ip_address: String, score: i32) {
+    use crate::schema::scores::dsl as scores;
+
+    // set up values and insert new card
+    let new_score = NewScore { ip_address, score };
+    diesel::insert_into(scores::scores)
+        .values(&new_score)
+        .execute(connection)
+        .expect("Error saving score");
 }
