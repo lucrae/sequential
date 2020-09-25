@@ -20,6 +20,10 @@ use rocket::response::Redirect;
 use rocket_contrib::templates::Template;
 use rocket_contrib::serve::StaticFiles;
 
+// rocket client addr
+extern crate rocket_client_addr;
+use rocket_client_addr::ClientRealAddr;
+
 // local
 use models::{Event, Hand, Card};
 
@@ -145,11 +149,11 @@ fn update_extra_lives(hand_id: i32, amount: i32) {
 }
 
 #[post("/save_score?<score>")]
-fn save_score(remote_addr: std::net::SocketAddr, score: i32) {
+fn save_score(client_addr: &ClientRealAddr, score: i32) {
 
     // save score
     let connection = db::establish_connection();
-    hand::save_score(&connection, remote_addr.to_string(), score);
+    hand::save_score(&connection, client_addr.get_ipv4_string().unwrap(), score);
 }
 
 fn main() {

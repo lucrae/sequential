@@ -27,7 +27,6 @@ pub struct Card {
 pub struct Score {
     pub id: i32,
     pub ip_address: String,
-    pub score: i32,
 }
 
 #[derive(Insertable)]
