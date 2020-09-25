@@ -187,7 +187,7 @@ function selectIncorrect(position) {
         `)
         $("#prompt-bottom-text").replaceWith(endPanel);
         endPanel.hide();
-        endPanel.slideDown(500);
+        endPanel.delay(2000).slideDown(500);
 
         // remove other placeholders
         $(".placeholder-panel").addClass("placeholder-panel-gone");
