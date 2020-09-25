@@ -52,6 +52,10 @@ a {
     color: var(--link);
 }
 
+h1, h2, h3 {
+    margin-top: 48px;
+}
+
 .header-block {
     margin: 16px auto 0 auto;
     background-color: var(--backing);
@@ -93,7 +97,7 @@ a {
 
 @media only screen and (max-device-width : 640px){
     .center-block {
-        padding: 8px;
+        padding: 8px 16px;
         border-radius: 0;
         width: auto;
     }
@@ -140,6 +144,12 @@ a {
         margin-top: 16px;
         margin-bottom: 16px;
     }
+}
+
+.code-block {
+    font-size: 10pt;
+    background-color: var(--panel-light-light);
+    padding: 16px;
 }
 
 /* ============================================================================
@@ -389,6 +399,15 @@ footer {
     padding: 16px;
 }
 
+.nudge-right {
+    margin-right: 4px;
+}
+
+.heading-bar {
+    background-color: var(--panel-medium-light);
+    padding: 16px;
+}
+
 /* ==========================================================================
    Mobile / Desktop
    ========================================================================== */
@@ -408,4 +427,8 @@ footer {
     .desktop-only {
         display: none;
     }
+}
+
+.nowrap {
+    white-space: nowrap; 
 }

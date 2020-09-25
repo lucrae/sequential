@@ -34,7 +34,7 @@
         <div class="header-block" href="">
                 
             <div class="title-image-block">
-                <a href="/"><img src="static/images/logo_beta.png"></a>
+                <a href="/"><img src="static/images/logo.png"></a>
             </div>
             
             {# <a class="title" href="/"><i class="fa fa-hourglass-half"></i> Sequential</a> #}

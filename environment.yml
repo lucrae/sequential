@@ -1,7 +1,0 @@
-name: sequential
-channels:
-    - defaults
-    - conda-forge
-dependencies:
-    - pylint
-    - scrapy
