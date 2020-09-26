@@ -11,15 +11,34 @@
     <p>
         I hope it's as interesting to play is it was to make :)
     </p>
+    <p>
+        <b>If you know someone that might like Sequential, please share it with them!</b>
+    </p>
+    <div id="share-buttons">
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://sequential.lucienrae.com" data-a2a-title="Check out this website!">
+        
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_reddit"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_sms"></a>
+        <a class="a2a_button_email"></a>
+        <a class="a2a_button_copy_link"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+    </div>
+    <p style="text-align: right;">
+    --- Lucien Rae Gentil
+    </p>
 
     <h1>Contact</h1>
 
     <h3 class="heading-bar" style="margin-top: 0;"><i class="fa fa-lightbulb" style="color: var(--achievement);"></i> Have event suggestions?</h3>
     <p>
-        Awesome! If you have a favourite invention, person, battle, or otherwise notable date you wish to be included, <b>contributions are very welcome!</b>
+        Awesome! If you have a favourite invention, person, battle, or otherwise notable date you wish to be included, contributions are very welcome!
     </p>
     <p>
-        Please provide a year and a single-sentence description for each suggested event (give as many as you'd like) and send <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event suggestion" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></span>.
+        <b>Please provide a year and a single-sentence description for each suggested event (give as many as you'd like) and send <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event suggestion" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></b>.
     </p>
     <p>
         Here are some examples:
@@ -38,7 +57,7 @@
 
     <h3 class="heading-bar"><i class="fa fa-question" style="color: var(--incorrect);"></i> Have a correction?</h3>
     <p>
-        Well spotted! Please give us as much information about the event listed and the correction that should be made (with a source) <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event correction" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a>.
+        Well spotted! <b>Please provide as much information about the event listed and the correction that should be made (with a source) <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event correction" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></b>.
     </p>
     <p>
         <i>Accepted corrections will be acknowledged below, unless requested otherwise.</i>
