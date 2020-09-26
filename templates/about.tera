@@ -55,7 +55,7 @@
         (Please note that events cannot be highly disputed, historically unnotable, or without sources. If the date is approximate include 'c.' before the year.)
     </p>
 
-    <h3 class="heading-bar"><i class="fa fa-question" style="color: var(--incorrect);"></i> Have a correction?</h3>
+    <h3 class="heading-bar"><i class="fa fa-question" style="color: #a01a1a;;"></i> Have a correction?</h3>
     <p>
         Well spotted! <b>Please provide as much information about the event listed and the correction that should be made (with a source) <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;?subject=Sequential event correction" class="nowrap"><i class="fa fa-envelope nudge-right"></i>here</a></b>.
     </p>
@@ -92,6 +92,7 @@
             <li><a href="https://sites.google.com/site/nccmnhistory/the-50-key-dates-of-world-history">NCCMN: 50 Key Dates of World History</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_19th_century">Wikipedia: Timeline of the 19th century</a></li>
             <li><a href="https://www.britishcouncil.org/sites/default/files/80-moments-report.pdf">British Council: 80 Moments that Shaped the World</a></li>
+            <li><a href="https://www.explainthatstuff.com/timeline.html">ExplainThatStuff: Technology Timeline</a></li>
         </ul>
     </p>
 

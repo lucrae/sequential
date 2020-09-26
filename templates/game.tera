@@ -99,6 +99,8 @@
         </p>
     </div>
 
+    <br class="mobile-only">
+
     <div class="special" style="display: none;">
         <span id="session-hash">{{ session_hash }}</span>
         <span id="hand-id">{{ hand_id }}</span>
