@@ -189,11 +189,11 @@ function selectIncorrect(position) {
                 
                 <a class="a2a_button_facebook"></a>
                 <a class="a2a_button_twitter"></a>
-                <a class="a2a_button_whatsapp"></a>
                 <a class="a2a_button_reddit"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_sms"></a>
                 <a class="a2a_button_email"></a>
                 <a class="a2a_button_copy_link"></a>
-                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                 </div>
                 <script async src="https://static.addtoany.com/menu/page.js"></script>
 
