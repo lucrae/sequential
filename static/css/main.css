@@ -54,6 +54,7 @@ a {
 
 h1, h2, h3 {
     margin-top: 48px;
+    line-height: 120%;
 }
 
 .header-block {

@@ -6,7 +6,7 @@
     <h1 class="desktop-only" style="margin-top: 0;">About</h1>
     <h1 class="mobile-only">About</h1>
     <p>
-        Sequential is an online game about putting pivotal historical events in order. It's both a fun test of how well you know (or can guess) your history, and also quite educational. I certainly learnt a few things making it!
+        Sequential is an online trivia game about putting pivotal historical events in order. It's both a fun test of how well you know (or can guess) your history, and also quite educational. I certainly learnt a few things making it!
     </p>
     <p>
         I hope it's as interesting to play is it was to make :)
@@ -49,22 +49,32 @@
         If you have any comments, feedback, or queries whatsoever, you can directly contact Sequential's creator Lucien Rae Gentil at <a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;" class="nowrap"><i class="fa fa-envelope nudge-right"></i>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#108;&#117;&#099;&#105;&#101;&#110;&#114;&#097;&#101;&#046;&#099;&#111;&#109;</a>.
     </p>
 
-    <h1>Credits</h1>
+    <h1>Credits & Acknowledgements</h1>
     <p>
-        Development and Design:
+        <b>Development and Design:</b>
         <ul>
-            <li><b>Lucien Rae Gentil</b>, back-end and front-end development</li>
-            <li><b>Kamron Bhavnagri</b>, web-scraping scripting</li>
-            <li><b>Julia Rae Gentil</b>, logo and background design</li>
-        </ul>
-    </p>
-    <p>
-        Historical Event Complation Sources:
-        <ul>
-            <li><a href="https://sites.google.com/site/nccmnhistory/the-50-key-dates-of-world-history">NCCMN: 50 Key Dates of World History</a></li>
+            <li>Lucien Rae Gentil, <i>back-end and front-end development</i></li>
+            <li>Julia Rae Gentil, <i>logo and background design</i></li>
+            <li>Kamron Bhavnagri, <i>web-scraping scripting</i></li>
         </ul>
     </p>
     
+    <p>
+        <b>Event Contributions and Corrections:</b>
+        <ul>
+            <li>Lucien Rae Gentil</li>
+            <li>Julia Rae Gentil</li>
+            <li>Aya Adel</li>
+        </ul>
+    </p>
+    <p>
+        <b>Complation Sources:</b>
+        <ul>
+            <li><a href="https://sites.google.com/site/nccmnhistory/the-50-key-dates-of-world-history">NCCMN: 50 Key Dates of World History</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_19th_century">Wikipedia: Timeline of the 19th century</a></li>
+            <li><a href="https://www.britishcouncil.org/sites/default/files/80-moments-report.pdf">British Council: 80 Moments that Shaped the World</a></li>
+        </ul>
+    </p>
 
 
     {# <h1>Page Under Construction</h1>
