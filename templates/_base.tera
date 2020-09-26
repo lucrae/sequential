@@ -12,12 +12,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/49e791e245.js" crossorigin="anonymous"></script>
 
-        {# CSS #}
-        <link rel="stylesheet" href="static/css/main.css" />
-
-        {# JavaScript #}
+        {# JQuery #}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="static/js/game.js"></script>
+
+        {# static CSS/JS #}
+        <link rel="stylesheet" href="static/css/main.css?v=0.2.0" />
+        <script src="static/js/game.js?v=0.2.0"></script>
 
         {# Google Analytics #}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142416642-2"></script>
