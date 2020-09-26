@@ -93,6 +93,12 @@
         </p>
     </div>
 
+    <div style="margin-top: 64px;">
+        <p class="centered">
+            <a href="/about"><i class="fa fa-lightbulb" style="color: var(--achievement);"></i> Have event suggestions, corrections, or questions?</a>
+        </p>
+    </div>
+
     <div class="special" style="display: none;">
         <span id="session-hash">{{ session_hash }}</span>
         <span id="hand-id">{{ hand_id }}</span>

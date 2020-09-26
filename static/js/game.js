@@ -181,8 +181,23 @@ function selectIncorrect(position) {
                 <i class="fa fa-play"></i> Play Again</a>
             </p>
             <p style="margin-top: 28px; font-weight: normal;">
-                <i class="fa fa-user"></i> Like Sequential? Share it with a friend and see how well they do!
+                <i class="fa fa-share"></i> Share Sequential with a friend and see how well they do!
             </p>
+            <div id="share-buttons">
+
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://sequential.lucienrae.com" data-a2a-title="Check out this website! Can you beat my score of ${score}?">
+                
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_reddit"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_copy_link"></a>
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+            </div>
         </div>
         `)
         $("#prompt-bottom-text").replaceWith(endPanel);
@@ -195,9 +210,7 @@ function selectIncorrect(position) {
         // scroll back to top
         scrollToTop(500);
 
-
         // save score and delete hand from database
-        $.post(`save_score?score=${score}`);
         $.post(`delete_hand?hand_id=${handID}`);
     }
 }

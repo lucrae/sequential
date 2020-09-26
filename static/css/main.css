@@ -409,6 +409,15 @@ footer {
     padding: 16px;
 }
 
+.nowrap {
+    white-space: nowrap; 
+}
+
+#share-buttons {
+    display: flex;
+    justify-content: center;
+}
+
 /* ==========================================================================
    Mobile / Desktop
    ========================================================================== */
@@ -428,8 +437,4 @@ footer {
     .desktop-only {
         display: none;
     }
-}
-
-.nowrap {
-    white-space: nowrap; 
 }
