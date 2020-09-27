@@ -22,7 +22,7 @@
         </div>
         <div class="prompt-bottom-text">
             <p id="prompt-bottom-text">
-                <i class="fa fa-hand-point-down"></i> Select a space in the timeline below.
+                <i class="fa fa-hand-point-down"></i> Select a <i class="fa fa-question" style="color: var(--panel-medium-dark);"></i> space in the timeline below.
             </p>
         </div>
     </div>
