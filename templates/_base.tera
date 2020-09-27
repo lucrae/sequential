@@ -43,7 +43,7 @@
     </body>
     <footer>
         <div class="footer">
-            <a href="/about"><i class="fa fa-info-circle"></i> About & Contact</a> &copy; <a href="https://lucienrae.com">Lucien Rae</a> 2020 
+            <a href="/about"><i class="fa fa-info-circle"></i> About & Contact</a> <span class="nowrap">&copy; <a href="https://lucienrae.com">Lucien Rae Gentil</a> 2020</a> 
         </div>
     </footer>
     
