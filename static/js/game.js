@@ -81,7 +81,7 @@ function selectCorrect(position) {
     $(".placeholder-panel").addClass("placeholder-panel-gone");
 
     // scroll back to top
-    scrollToTop(200);
+    scrollToTop(500);
 
     // update hand to have new event
     $.post(`update_hand?hand_id=${handID}&event_id=${newEventID}`);
