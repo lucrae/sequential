@@ -16,8 +16,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         {# static CSS/JS #}
-        <link rel="stylesheet" href="static/css/main.css?v=0.2.3" />
-        <script src="static/js/game.js?v=0.2.3"></script>
+        <link rel="stylesheet" href="static/css/main.css?v=0.2.4" />
+        <script src="static/js/game.js?v=0.2.4"></script>
 
         {# Google Analytics #}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142416642-2"></script>

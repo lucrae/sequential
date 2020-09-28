@@ -87,21 +87,17 @@
         </ul>
     </p>
     <p>
-        <b>Compilation Sources:</b>
+        <b>Reference Compilations:</b>
         <ul>
             <li><a href="https://sites.google.com/site/nccmnhistory/the-50-key-dates-of-world-history">NCCMN: 50 Key Dates of World History</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_19th_century">Wikipedia: Timeline of the 19th century</a></li>
-            <li><a href="https://www.britishcouncil.org/sites/default/files/80-moments-report.pdf">British Council: 80 Moments that Shaped the World</a></li>
             <li><a href="https://www.explainthatstuff.com/timeline.html">ExplainThatStuff: Technology Timeline</a></li>
+            <li><a href="https://beckchris.wordpress.com/history/the-55-most-important-events-in-human-history">The 100 Most Important Events in Human History</a></li>
+            <li><a href="https://www.britishcouncil.org/sites/default/files/80-moments-report.pdf">British Council: 80 Moments that Shaped the World</a></li>
         </ul>
     </p>
 
-
-    {# <h1>Page Under Construction</h1>
-    <p>
-        <a href="/">Go back to main page.</a>
-    </p> #}
-
+    <br class="mobile-only">
 </div>
 
 {% endblock content %}
