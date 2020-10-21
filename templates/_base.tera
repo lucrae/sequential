@@ -4,6 +4,9 @@
 
         {# meta #}
         <meta charset="UTF-8">
+        <meta name="description" content="An online trivia game about putting pivotal historical events in order.">
+        <meta name="keywords" content="sequential, history, order, game">
+        <meta name="author" content="Lucien Rae Gentil">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="icon" href="/static/images/icon.ico" type="image/x-icon">
         <title>Sequential</title>
